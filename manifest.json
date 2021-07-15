@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+    "name": "Background Changer",
+    "version": "1.0.0",
+    
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "angular.min.js",
+                "angular-ui-router.min.js",
+                "jquery-3.6.0.min.js",
+                "popup_script.js",
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            
+            "angular.min.js",
+            "angular-ui-router.min.js",
+            "popup_script.js",
+            "jquery-3.6.0.min.js",
+            "background.js"
+        ]
+    },
+   
+    "description": "Does stuff with the background.",
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+
+    },
+    "browser_action": {
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html"
+       
+    },
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com/; object-src 'self'",
+    "permissions": ["tabs", "activeTab"]
+  }
